@@ -35,7 +35,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/Persona.png"/>
+        android:src="@drawable/IPN-Logo.png"/>
 
     //Botón para enviar el formulario
     <Button
