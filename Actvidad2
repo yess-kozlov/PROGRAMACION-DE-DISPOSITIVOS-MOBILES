@@ -1,0 +1,81 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/et_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/et_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de teléfono"
+        android:inputType="phone"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/default_image"/>
+
+    <Button
+        android:id="@+id/btn_enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar"/>
+</LinearLayout>
+2. Lógica de la Aplicación en Kotlin
+Archivo Kotlin (dentro de src/main/java, usualmente MainActivity.kt): Aquí va toda la lógica de la aplicación, como la validación de campos y la gestión dinámica de la imagen.
+Ejemplo de cómo empezar en MainActivity.kt:
+
+kotlin
+Copiar código
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val nombreEditText = findViewById<EditText>(R.id.et_nombre)
+        val correoEditText = findViewById<EditText>(R.id.et_correo)
+        val telefonoEditText = findViewById<EditText>(R.id.et_telefono)
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        val enviarButton = findViewById<Button>(R.id.btn_enviar)
+
+        enviarButton.setOnClickListener {
+            val nombre = nombreEditText.text.toString()
+            val correo = correoEditText.text.toString()
+            val telefono = telefonoEditText.text.toString()
+
+            // Validar que todos los campos estén llenos
+            if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()) {
+                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                // Lógica para cambiar la imagen de perfil
+                imageView.setImageResource(R.drawable.new_image)
+                Toast.makeText(this, "Formulario enviado correctamente", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}
