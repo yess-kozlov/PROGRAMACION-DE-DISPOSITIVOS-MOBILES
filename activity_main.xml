@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
-    //EditText para ingresar el nombre del usuario
+    //EditText para nombre del usuario
     <EditText
         android:id="@+id/et_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
+        android:hint="@string/hint_nombre"
         android:inputType="textPersonName"/>
 
-    //EditText para ingresar el correo electrónico
+    //EditText para el correo electrónico
     <EditText
         android:id="@+id/et_correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
+        android:hint="@string/hint_correo"
         android:inputType="textEmailAddress"/>
 
-    //EditText para ingresar el número de teléfono
+    //EditText para el número de teléfono
     <EditText
         android:id="@+id/et_telefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Número de teléfono"
+        android:hint="@string/hint_telefono"
         android:inputType="phone"/>
 
-    //Es el imageView donde se mostrará la imagen de perfil logo del IPN 
+    //ImageView donde se mostrará la imagen de perfil
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/ipn_logo"/>
+        android:src="@drawable/Persona.png"/>
 
-    //Botón para enviar el formulario pedido
+    //Botón para enviar el formulario
     <Button
         android:id="@+id/btn_enviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar"/>
+        android:text="@string/btn_enviar"/>
 </LinearLayout>
-
