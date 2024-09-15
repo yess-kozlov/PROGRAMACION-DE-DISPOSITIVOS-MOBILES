@@ -1,0 +1,13 @@
+<resources>
+    / Estos son los estilo personalizado para los EditText anteriormente creados
+    <style name="CustomEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">#FFDDDD</item> /Color de fondo 
+        <item name="android:textColor">#333333</item> /Color del texto
+    </style>
+
+    / igualmente son lo estilo personalizado para el Button
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">#FF5733</item>  /Color de fondo 
+        <item name="android:textColor">#FFFFFF</item> /Color del texto
+    </style>
+</resources>
